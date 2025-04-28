@@ -1,0 +1,28 @@
+Analyze the JSON {{$DATA_SET}} and the user's question {{$QUESTION}}. 
+Create a JSON by mapping the values from the user's question to the correct field names, strictly following the field names in the provided JSON. 
+Only include the exact JSON text in the response and do not explain.
+
+Example 1:
+Input: {"frm_id": {"type":"number"}}
+Question: Show the details of formula 1111
+Output: {"frm_id": 1111}
+
+Example 2:
+Input: {"formula_number":{"type":"string"},"country":{"type":"string"}}
+Question: Review formula 1111 for China
+Output: {"formula_number": 1111,"country":"China"}
+
+Example 3:
+Input: [{"formula_number":{"type":"string"}}]
+Question: Compare formulas abc/1 with xyz/2
+Output: [{"formula_number": "abc/1"},{"formula_number":"xyz/2"}]
+
+Example 4:
+Input: {"formulaId":[{"type":"number"}]}
+Question: Compare formulas 1, 2
+Output: {"formulaId":[1,2]}
+
+Example 5:
+Input: [{"formula_number":{"type":"string"}}]
+Question: Compare formula abc to xyz
+Output: [{"formula_number": "abc"},{"formula_number":"xyz"}]
